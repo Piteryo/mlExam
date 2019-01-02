@@ -1,0 +1,9 @@
+all_words = set()
+
+with open("news_train.txt", "r", encoding="utf-8") as train_text:
+    for article in train_text:
+        split = article.split('\n')
+        theme = split[0]
+        text = split[1] + " " + split[2]
+        words = set(text.split())
+        all_words |= words
